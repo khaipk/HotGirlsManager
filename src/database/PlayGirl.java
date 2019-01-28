@@ -21,7 +21,7 @@ public class PlayGirl {
 			System.out.println("3. Xem thông tin em gái");
 			System.out.println("4. Lưu thông tin em gái");
 			System.out.println("5. Mở thông tin em gái");
-			System.out.println("6. Sắp xếp theo tuổi");
+			
 			System.out.println("0. Thoát");
 			System.out.println("Your choice: 1-6");
 			int key = sc.nextInt();
@@ -41,9 +41,7 @@ public class PlayGirl {
 			case 5:
 				load();
 				break;
-			case 6:
-				Collections.sort(girls, new RankGirls());
-				break;
+			
 			default:
 				System.err.println("Tạm biệt nhé!!!");
 				System.exit(0);
@@ -71,8 +69,8 @@ public class PlayGirl {
 		System.out.println("Nhập hành động muốn thực hiện:");
 		System.out.println("1. Xóa em gái khỏi danh sách");
 		System.out.println("2. Sửa thông tin em gái");
-		//System.out.println("3. Sắp xếp theo tuổi");
-		//System.out.println("4. Sắp xếp theo mã số");
+		System.out.println("3. Sắp xếp theo tuổi");
+		System.out.println("4. Sắp xếp theo mã số");
 		System.out.println("5. Quay lại");
 		int key = sc.nextInt();
 		switch (key) {
@@ -82,7 +80,12 @@ public class PlayGirl {
 		case 2:
 			sua();
 			break;
-		
+		case 3:
+			Collections.sort(girls, new RankGirls());
+			break;
+		case 4:
+			Collections.sort(girls, new RankGirlsByID());
+			break;
 
 		default:
 			flag = false;
